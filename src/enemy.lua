@@ -1,11 +1,20 @@
 enemies = {}
 
 function enemies.load()
-    
+    maxTime = 2
+    timer = maxTime
 end
 
 function enemies.update(dt)
     enemyMovement(dt)
+
+    timer = timer - dt
+    if timer <= 0 then
+        enemySpawn()
+        maxTime = 0.95 * maxTime
+        timer = maxTime
+        print("Spawned")
+    end
 end
 
 function enemies.draw()

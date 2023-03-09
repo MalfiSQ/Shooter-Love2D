@@ -66,7 +66,7 @@ end
 function killEnemy(dt)
     for i, enemy in ipairs(enemies) do
         for j, bullet in ipairs(bullets) do
-            if distanceBetween(enemy.x, enemy.y, bullet.x, bullet.y) < 50 then
+            if distanceBetween(enemy.x, enemy.y, bullet.x, bullet.y) < 30 then
                 enemy.dead = true
                 bullet.dead = true
             end
